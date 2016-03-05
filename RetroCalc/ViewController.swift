@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     var result = ""
      
     // ========== ON START ========== //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +54,7 @@ class ViewController: UIViewController {
 
     
     // =========== @IBACTION FUNCTIONS  ===========
+    
     @IBAction func onDividePressed(sender: AnyObject) {
         processOperation(Operation.Divide)
     }
@@ -104,58 +106,57 @@ class ViewController: UIViewController {
                 // pressed an operator first without pressed any number (the app was crashing otherwise)
                 switch currentOperation {
                 
-                case Operation.Multiply:
-                    if (leftValStr != "") {
-                        result = "\(Double(leftValStr)! *  Double(rightValStr)!)"
-                    }
+                    case Operation.Multiply:
+                        if (leftValStr != "") {
+                            result = "\(Double(leftValStr)! *  Double(rightValStr)!)"
+                        }
                         
-                    else {
-                        leftValStr = "\(0)"
-                        result = "\(Double(leftValStr)! *  Double(rightValStr)!)"
-                    }
+                        else {
+                            leftValStr = "\(0)"
+                            result = "\(Double(leftValStr)! *  Double(rightValStr)!)"
+                        }
                     
-                case Operation.Divide:
-                    if (leftValStr != "") {
-                        result = "\(Double(leftValStr)! /  Double(rightValStr)!)"
-                    }
+                    case Operation.Divide:
+                        if (leftValStr != "") {
+                            result = "\(Double(leftValStr)! /  Double(rightValStr)!)"
+                        }
                         
-                    else {
-                        leftValStr = "\(0)"
-                        result = "\(Double(leftValStr)! /  Double(rightValStr)!)"
-                    }
+                        else {
+                            leftValStr = "\(0)"
+                            result = "\(Double(leftValStr)! /  Double(rightValStr)!)"
+                        }
                     
-                case Operation.Substract:
-                    if (leftValStr != "") {
-                        result = "\(Double(leftValStr)! -  Double(rightValStr)!)"
-                    }
+                    case Operation.Substract:
+                        if (leftValStr != "") {
+                            result = "\(Double(leftValStr)! -  Double(rightValStr)!)"
+                        }
                         
-                    else {
-                        leftValStr = "\(0)"
-                        result = "\(Double(leftValStr)! -  Double(rightValStr)!)"
-                    }
+                        else {
+                            leftValStr = "\(0)"
+                            result = "\(Double(leftValStr)! -  Double(rightValStr)!)"
+                        }
                     
-                case Operation.Add:
-                    if (leftValStr != "") {
-                        result = "\(Double(leftValStr)! +  Double(rightValStr)!)"
-                    }
+                    case Operation.Add:
+                        if (leftValStr != "") {
+                            result = "\(Double(leftValStr)! +  Double(rightValStr)!)"
+                        }
                         
-                    else {
-                        leftValStr = "\(0)"
-                        result = "\(Double(leftValStr)! +  Double(rightValStr)!)"
-                    }
+                        else {
+                            leftValStr = "\(0)"
+                            result = "\(Double(leftValStr)! +  Double(rightValStr)!)"
+                        }
                 
-                default:
-                    leftValStr = "\(0)"
-                    rightValStr = "\(0)"
-                    outputLbl.text = "\(0)"
-                    currentOperation = op
+                    default:
+                        leftValStr = "\(0)"
+                        rightValStr = "\(0)"
+                        outputLbl.text = "\(0)"
+                        currentOperation = op
                     
-                }
+                    }
             }
             
-                leftValStr = result
-                outputLbl.text = result
-            
+            leftValStr = result
+            outputLbl.text = result
             currentOperation = op
             
             
